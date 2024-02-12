@@ -1,0 +1,11 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login {
+    justify-content: center;
+    background-color: var(--color-bg-accent-dark-3);
+}

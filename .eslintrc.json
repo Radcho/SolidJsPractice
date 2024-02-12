@@ -1,0 +1,30 @@
+{
+    "env": { "browser": true },
+    "extends": [
+        "eslint:recommended",
+        "airbnb-base",
+        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@typescript-eslint/strict",
+        "plugin:solid/typescript",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": { "project": ["./tsconfig.json"] },
+    "plugins": ["@typescript-eslint", "solid"],
+    "rules": {
+        "prettier/prettier": ["error", { "endOfLine": "auto" }],
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "no-console": "off",
+        "class-methods-use-this": "off",
+        "quotes": [
+            "error",
+            "single",
+            { "allowTemplateLiterals": true, "avoidEscape": true }
+        ]
+    }
+}

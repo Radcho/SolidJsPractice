@@ -1,0 +1,115 @@
+.login {
+    min-width: 10rem;
+    height: min-content;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-bg-accent-dark-2);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.login h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.msButton {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.msButton > svg {
+    border: 1px solid var(--color-bg-accent-light-1);
+    color: var(--color-bg-accent-dark-3);
+}
+
+.msButton:hover > svg {
+    border-color: var(--color-bg-accent-dark-2);
+    color: var(--color-bg-accent-dark-1);
+}
+
+.loginSeparator {
+    margin-block: 1rem;
+    color: var(--color-bg-accent-dark-3);
+    font-size: 0.6rem;
+    display: flex;
+    width: 80%;
+    align-items: center;
+}
+
+.loginSeparator::before,
+.loginSeparator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--color-bg-accent-light-1);
+}
+
+.loginSeparator:not(:empty)::before {
+    margin-right: 0.5em;
+}
+
+.loginSeparator:not(:empty)::after {
+    margin-left: 0.5em;
+}
+
+.loginSection {
+    width: min-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginSection input {
+    border: 0;
+    border-bottom: 1px solid var(--color-bg-accent-light-1);
+    padding: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.loginSection form {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginSection form button {
+    border: 0;
+    padding: 0.4rem 0.6rem;
+
+    align-self: flex-end;
+    margin-top: 1rem;
+
+    cursor: pointer;
+    border-radius: 0.2rem;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+
+.loginSection form button:disabled,
+.loginSection form button:disabled:hover {
+    cursor: default;
+    background-color: var(--color-bg-accent-light-2);
+    color: var(--color-text-disabled);
+}
+
+.loginSection form button:hover {
+    background-color: color-mix(
+        in srgb,
+        var(--color-bg-primary) 70%,
+        var(--color-bg-surface) 30%
+    );
+}
+
+.loginError {
+    color: var(--color-container-text-danger);
+}

@@ -1,0 +1,60 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000077;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background-color: white;
+    padding: 2rem;
+    position: relative;
+}
+
+.modal h4 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form textarea {
+    font-family: var(--font-family);
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.formInput label {
+    font-size: 0.8rem;
+}
+
+.formInput label::after {
+    content: ':';
+}
+
+.formError {
+    font-size: 0.6rem;
+    color: var(--color-container-text-danger);
+}
+
+.option {
+    font-style: normal;
+    color: var(--color-text);
+}
+
+.emptyOption {
+    font-style: italic;
+    color: var(--color-text-disabled);
+}

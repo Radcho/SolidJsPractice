@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-text);
+}
+
+:root {
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+
+    --brand-primary-50: #ede7f6;
+    --brand-primary-100: #d1c4e9;
+    --brand-primary-200: #b39ddb;
+    --brand-primary-300: #9575cd;
+    --brand-primary-400: #7e57c2;
+    --brand-primary-500: #673ab7;
+    --brand-primary-600: #5e35b1;
+    --brand-primary-700: #512da8;
+    --brand-primary-800: #4527a0;
+    --brand-primary-900: #311b92;
+
+    --brand-secondary-50: #fff8e1;
+    --brand-secondary-100: #fff9c4;
+    --brand-secondary-200: #ffe082;
+    --brand-secondary-300: #ffd54f;
+    --brand-secondary-400: #ffca28;
+    --brand-secondary-500: #ffc107;
+    --brand-secondary-600: #ffb300;
+    --brand-secondary-700: #ffa000;
+    --brand-secondary-800: #ff8f00;
+    --brand-secondary-900: #ff6f00;
+
+    --color-text: #0f0f0f;
+    --color-text-light: #ffffff;
+
+    --color-bg-primary: var(--brand-primary-700);
+    --color-text-primary: var(--color-text-light);
+    --color-bg-secondary: var(--brand-secondary-300);
+    --color-text-secondary: var(--color-text);
+
+    --color-bg-accent-dark-1: #3a3a3a;
+    --color-bg-accent-dark-2: #545454;
+    --color-bg-accent-dark-3: #6d6d6d;
+
+    --color-bg-accent-light-1: #a6a6a6;
+    --color-bg-accent-light-2: #d9d9d9;
+    --color-bg-accent-light-3: #fafafa;
+
+    --color-bg-surface: #ffffff;
+    --color-bg-surface-dark: #000000;
+
+    --color-container-bg-info: #b3e5fc;
+    --color-container-text-info: #01579b;
+    --color-container-bg-success: #c8e6c9;
+    --color-container-text-success: #1b5e20;
+    --color-container-bg-warning: #ffecb3;
+    --color-container-text-warning: #7f6003;
+    --color-container-bg-danger: #ffcdd2;
+    --color-container-text-danger: #b71c1c;
+
+    --color-text-disabled: color-mix(
+        in srgb,
+        var(--color-bg-accent-light-1) 50%,
+        var(--color-bg-accent-dark-3) 50%
+    );
+}
