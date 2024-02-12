@@ -16,6 +16,9 @@ type FormInputProps = {
     onInput: (newValue: string, hasErrors: boolean) => void;
 };
 
+/**
+ * Generic input component
+ */
 const FormInput: Component<FormInputProps> = (props) => {
     const [getValue, setValue, getErrors] = createFormInput(
         props.initialValue ?? '',

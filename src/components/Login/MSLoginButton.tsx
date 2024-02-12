@@ -5,7 +5,10 @@ type LoginProps = {
     onClick: () => void;
 };
 
-const LoginButton: Component<LoginProps> = (props) => {
+/**
+ * Fictive Microsoft login button for the login dialog
+ */
+const MSLoginButton: Component<LoginProps> = (props) => {
     return (
         <button class={styles.msButton} onClick={() => props.onClick()}>
             <svg
@@ -101,4 +104,4 @@ const LoginButton: Component<LoginProps> = (props) => {
     );
 };
 
-export default LoginButton;
+export default MSLoginButton;

@@ -16,11 +16,16 @@ type LeaveModalProps = Pick<TDismiss, 'open' | 'setOpen' | 'menuButton'> & {
     year: number;
 };
 
+/**
+ * Example modal for submitting a leave request for work
+ */
 const LeaveModal: Component<LeaveModalProps> = (props) => {
     const [isSubmittingForm, setSubmittingForm] = createSignal(false);
     const [hasErrors, addErrorIfNotExists, removeErrorIfExists] =
         createErrorTracker();
 
+    // Normally this wouldn't be just a resource call, since it gets called every time a valid day is mounted, but should be cached instead.
+    // For the purposes of this app though, this is irrelevant.
     const [approvers] = createResource(() => leaveService.getListOfApprovers());
     const getApproverOptions = (without?: string) => {
         return (

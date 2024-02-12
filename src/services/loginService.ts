@@ -5,6 +5,7 @@ import BaseService from './baseService';
 
 class LoginService extends BaseService {
     public async login(login: Login): Promise<User> {
+        // Commented out since we only use generated data
         // return await this.post<User, Login>('/login', login);
 
         await wait(500);

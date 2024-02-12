@@ -17,10 +17,11 @@
         "prettier/prettier": ["error", { "endOfLine": "auto" }],
         "import/extensions": "off",
         "import/no-extraneous-dependencies": "off",
-        "@typescript-eslint/no-non-null-assertion": "off",
+        "import/prefer-default-export": "off",
         "@typescript-eslint/no-misused-promises": "off",
-        "no-console": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
         "class-methods-use-this": "off",
+        "no-console": "off",
         "quotes": [
             "error",
             "single",

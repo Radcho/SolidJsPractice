@@ -9,6 +9,9 @@ type CalendarMonthProps = {
 
 type DayOfTheWeek = Pick<CalendarDayProps, 'dayNumber' | 'monthChange'>;
 
+/**
+ * Components that displays the selected month
+ */
 const CalendarMonth: Component<CalendarMonthProps> = (props) => {
     const getDaysOfMonth = () => {
         const firstDateOfMonth = new Date(props.year, props.month, 1);

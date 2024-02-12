@@ -12,6 +12,9 @@ type FormSelectInputProps = {
     onInput: (newValue: string, hasErrors: boolean) => void;
 };
 
+/**
+ * Generic form select component
+ */
 const FormSelectInput: Component<FormSelectInputProps> = (props) => {
     const [getValue, setValue, getErrors] = createFormInput(
         props.initialValue ?? '',

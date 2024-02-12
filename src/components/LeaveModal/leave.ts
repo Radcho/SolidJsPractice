@@ -27,3 +27,7 @@ export const LeaveOptions = Leave.map((leave) => ({
     label: leave.type,
     value: leave.type,
 }));
+
+export const getLeaveColor = (type: string) => {
+    return Leave.find((leave) => leave.type === type)?.color ?? '#FFFFFF';
+};

@@ -1,21 +1,25 @@
 import { Component, Show, createSignal } from 'solid-js';
 import styles from './Login.module.css';
-import LoginButton from './LoginButton';
+import MSLoginButton from './MSLoginButton';
 import loginService from '../../services/loginService';
 import User from '../../interfaces/user';
+import LoadingIndicator from '../LoadingIndicator';
 
 type LoginProps = {
     onLogin: (user: User) => void;
 };
 
+/**
+ * Simple login dialog
+ */
 const Login: Component<LoginProps> = (props) => {
     const [getUsername, setUsername] = createSignal('');
     const [getPassword, setPassword] = createSignal('');
-    const [getLoggingInState, setLoggingInState] = createSignal(false);
+    const [isLoggingIn, setLoggingIn] = createSignal(false);
     const [getLoginError, setLoginError] = createSignal('');
 
     const canLogIn = () =>
-        getUsername().trim() && getPassword().trim() && !getLoggingInState();
+        getUsername().trim() && getPassword().trim() && !isLoggingIn();
 
     const handleLoginError = (error: unknown) => {
         if (error === null) {
@@ -43,7 +47,7 @@ const Login: Component<LoginProps> = (props) => {
         e.preventDefault();
 
         if (canLogIn()) {
-            setLoggingInState(true);
+            setLoggingIn(true);
             try {
                 const user = await loginService.login({
                     username: getUsername(),
@@ -53,15 +57,16 @@ const Login: Component<LoginProps> = (props) => {
             } catch (err) {
                 handleLoginError(err);
             }
-            setLoggingInState(false);
+            setLoggingIn(false);
         }
     };
 
     return (
         <div class={styles.login}>
+            <LoadingIndicator show={isLoggingIn()} />
             <h1>Log in to your account</h1>
             <div class={styles.loginSection}>
-                <LoginButton
+                <MSLoginButton
                     onClick={() =>
                         console.log('Logging in with a Microsoft account')
                     }
@@ -75,14 +80,14 @@ const Login: Component<LoginProps> = (props) => {
                         placeholder='Username'
                         aria-label='Username'
                         autofocus
-                        disabled={getLoggingInState()}
+                        disabled={isLoggingIn()}
                         onInput={(e) => setUsername(e.target.value)}
                     />
                     <input
                         type='password'
                         placeholder='Password'
                         aria-label='Password'
-                        disabled={getLoggingInState()}
+                        disabled={isLoggingIn()}
                         onInput={(e) => setPassword(e.target.value)}
                     />
                     <Show when={getLoginError()}>

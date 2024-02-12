@@ -1,4 +1,7 @@
-class BaseService {
+/**
+ * Base service class containing wrapped get/post methods. In a real application this could also include any error handling, middlewares, authentication, etc.
+ */
+abstract class BaseService {
     private baseUrl: string;
 
     constructor(baseUrl: string = '') {

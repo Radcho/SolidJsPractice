@@ -2,16 +2,28 @@ import { faker } from '@faker-js/faker';
 import User from '../interfaces/user';
 import Approver from '../interfaces/approver';
 
+/**
+ * Helper method for awaiting a preset number of time
+ * @param ms Milliseconds to wait
+ * @returns Promise that resolves after `ms` milliseconds
+ */
 export const wait = (ms: number) => {
     return new Promise((resolve) => {
         setTimeout(resolve, ms);
     });
 };
 
-const fakerSeed = Date.now();
+/**
+ * Constant seed while the app is opened, so the faker results are consistent.
+ */
+const FakerSeed = Date.now();
 
+/**
+ * Generates a fake user object with faker.js
+ * @returns Fake `User` object
+ */
 export const getFakeUser = (): User => {
-    faker.seed(fakerSeed);
+    faker.seed(FakerSeed);
     return {
         firstName: faker.person.firstName(),
         lastName: faker.person.lastName(),
@@ -23,8 +35,12 @@ export const getFakeUser = (): User => {
     };
 };
 
+/**
+ * Generates an array of fake approver objects with faker.js
+ * @returns Array of fake `Approver` objects
+ */
 export const getFakeApprovers = (): Array<Approver> => {
-    faker.seed(fakerSeed);
+    faker.seed(FakerSeed);
     return Array.from<never, Approver>(
         { length: faker.number.int({ min: 6, max: 12 }) },
         () => {

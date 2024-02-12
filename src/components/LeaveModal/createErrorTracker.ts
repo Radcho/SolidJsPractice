@@ -1,5 +1,11 @@
 import { createSignal } from 'solid-js';
 
+/**
+ * Wrapper around a signal that is used for tracking any present errors on a form to disable certain actions.
+ *
+ * Specific errors are tracked on the inputs themselves, but this tracker tracks input identifiers and checks if an error is still present.
+ * @returns An array containing a boolean getter describing if any errors are present, a method for adding an error source and a method for removing an error source
+ */
 const createErrorTracker = () => {
     const [getArray, setArray] = createSignal<Array<string>>([]);
 

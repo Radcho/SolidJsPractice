@@ -6,6 +6,9 @@ type CalendarDateProps = {
     onChange: (month: number, year: number) => void;
 };
 
+/**
+ * Component displaying the current month and year, buttons for changing mentioned month and year and the number of unallocated vacation days
+ */
 const CalendarDate: Component<CalendarDateProps> = (props) => {
     const { getUser } = user;
 

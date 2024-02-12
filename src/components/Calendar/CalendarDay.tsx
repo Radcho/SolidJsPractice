@@ -9,6 +9,9 @@ export type CalendarDayProps = {
     dayNumber: number;
 };
 
+/**
+ * Calendar day component
+ */
 const CalendarDay: Component<CalendarDayProps> = (props) => {
     const [isModalOpen, setModalOpen] = createSignal(false);
     let modalActivator;

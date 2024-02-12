@@ -3,6 +3,9 @@ import Dismiss from 'solid-dismiss';
 import styles from './Header.module.css';
 import user from '../../stores/user';
 
+/**
+ * An avatar component with a dropdown only containing one action: logout
+ */
 const Avatar: Component = () => {
     const { getUser, setUser } = user;
     const [isDropdownOpen, setDropdownOpen] = createSignal(false);

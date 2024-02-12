@@ -6,6 +6,9 @@ type LoadingIndicatorProps = {
     show: boolean;
 };
 
+/**
+ * Simple animated loading indicator based on one of the SVG Spinners from https://github.com/n3r4zzurr0/svg-spinners
+ */
 const LoadingIndicator: Component<LoadingIndicatorProps> = (props) => {
     return (
         <Show when={props.show}>
